@@ -5,16 +5,16 @@ public class Broken {
     public String surname;
     public static final String NEW_VALUE = "";
 
-    void echo() {
+    public void echo() {
     }
 
-    void media(Object obj) {
+    public void media(Object obj) {
         if (obj != null) {
             System.out.println(obj);
         }
     }
 
-    void method() {
+    public void method() {
         int a;
         int b;
         int c;
@@ -25,9 +25,9 @@ public class Broken {
         int h;
     }
 
-    String name;
+    private String name;
 
-    void broken() {
+    public void broken() {
     }
 }
 
