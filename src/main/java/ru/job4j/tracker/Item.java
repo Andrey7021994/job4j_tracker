@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import ru.job4j.oop.Computer;
-
 public class Item {
     private int id;
     private String name;
