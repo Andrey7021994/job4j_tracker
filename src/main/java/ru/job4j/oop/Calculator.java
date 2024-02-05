@@ -20,9 +20,8 @@ public class Calculator {
         return x + y;
     }
 
-    public int sumAllOperation(int y, int a) {
-        int result = sum(y) + multiply(a) + divide(a) + minus(a);
-        return result;
+    public int sumAllOperation(int y) {
+        return sum(y) + multiply(y) + divide(y) + minus(y);
     }
 
     public static void main(String[] args) {
@@ -35,7 +34,7 @@ public class Calculator {
         System.out.println(result3);
         int result4 = calculator.minus(6);
         System.out.println(result4);
-        int result5 = calculator.sumAllOperation(10, 6);
+        int result5 = calculator.sumAllOperation(10);
         System.out.println(result5);
     }
 }
