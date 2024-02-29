@@ -4,9 +4,7 @@ public class Reduce {
     private int[] array;
 
     public void to(int[] array) {
-        this.array = array; // В методе to(int[] array) необходимо изменить способ присваивания
-        // значения массиву this.array. Вместо array = array нужно использовать this.array = array,
-        // чтобы корректно присвоить переданный массив array полю this.array класса Reduce.
+        this.array = array;
     }
 
     public void print() {
