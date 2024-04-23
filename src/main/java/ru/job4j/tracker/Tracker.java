@@ -46,21 +46,26 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        boolean result = false;
-        if (index != -1) {
-            item.setId(id);
+        boolean result = index != -1;
+        if (result) {
             items[index] = item;
-            result = true;
+            items[index].setId(id);
+        } else {
+            result = false;
         }
         return result;
     }
 
     public void delete(int id) {
+        if (items == null) {
+            System.out.println("Массив пустой, невозможно удалить элемент.");
+            return;
+        }
+
         int index = indexOf(id);
         if (index != -1) {
             System.arraycopy(items, index + 1, items, index, size - index - 1);
-            items[size - 1] = null;
-            size--;
+            items[size--] = null;
         }
     }
 }
