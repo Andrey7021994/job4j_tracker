@@ -50,22 +50,16 @@ public class Tracker {
         if (result) {
             items[index] = item;
             items[index].setId(id);
-        } else {
-            result = false;
         }
         return result;
     }
 
     public void delete(int id) {
-        if (items == null) {
-            System.out.println("Массив пустой, невозможно удалить элемент.");
-            return;
-        }
-
         int index = indexOf(id);
         if (index != -1) {
             System.arraycopy(items, index + 1, items, index, size - index - 1);
-            items[size--] = null;
+            items[size - 1] = null;
+            size--;
         }
     }
 }
