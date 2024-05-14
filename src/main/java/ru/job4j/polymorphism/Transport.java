@@ -8,3 +8,4 @@ public interface Transport {
     double fillUp(double amountOfFuel);
 
 }
+
