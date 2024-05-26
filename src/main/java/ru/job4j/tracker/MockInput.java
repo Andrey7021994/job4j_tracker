@@ -11,3 +11,4 @@ public class MockInput implements Input {
         return 0;
     }
 }
+
