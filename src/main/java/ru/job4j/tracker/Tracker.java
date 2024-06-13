@@ -33,7 +33,7 @@ public class Tracker {
         return Arrays.copyOf(items, size);
     }
 
-    Item[] findByName(String key) {
+    public Item[] findByName(String key) {
         Item[] itemsByName = new Item[items.length];
         int count = 0;
         for (int index = 0; index < size; index++) {
