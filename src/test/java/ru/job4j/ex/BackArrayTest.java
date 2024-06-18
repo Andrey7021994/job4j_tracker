@@ -21,3 +21,4 @@ class BackArrayTest {
         assertThat(result).isEqualTo(expected);
     }
 }
+
