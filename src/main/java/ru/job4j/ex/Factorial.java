@@ -17,3 +17,4 @@ public class Factorial {
         new Factorial().calc(-1);
     }
 }
+
