@@ -181,5 +181,52 @@ class StartUITest {
                         + "0. Завершить программу" + ln
                         + "=== Завершение программы ===" + ln);
     }
+
+    @Test
+    void whenInvalidInput() {
+        Output output = new StubOutput();
+        Input in = new MockInput(
+                new String[]{"one", "1"}
+        );
+        ValidateInput input = new ValidateInput(output, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(1);
+    }
+
+    @Test
+    void whenInvalidCorrectInput() {
+        Output output = new StubOutput();
+        Input in = new MockInput(
+                new String[]{"4"}
+        );
+        ValidateInput input = new ValidateInput(output, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(4);
+    }
+
+    @Test
+    void whenInvalidMultipleCorrectInput() {
+        Output output = new StubOutput();
+        Input in = new MockInput(
+                new String[]{"1", "2", "3", "4", "5"}
+        );
+        ValidateInput input = new ValidateInput(output, in);
+        int[] expectedValues = {1, 2, 3, 4, 5};
+        for (int i = 0; i < expectedValues.length; i++) {
+            int selected = input.askInt("Enter menu:");
+            assertThat(selected).isEqualTo(expectedValues[i]);
+        }
+    }
+
+    @Test
+    void whenNegativeNumberInput() {
+        Output output = new StubOutput();
+        Input in = new MockInput(
+                new String[]{"-1"}
+        );
+        ValidateInput input = new ValidateInput(output, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(-1);
+    }
 }
 
