@@ -211,11 +211,16 @@ class StartUITest {
                 new String[]{"1", "2", "3", "4", "5"}
         );
         ValidateInput input = new ValidateInput(output, in);
-        int[] expectedValues = {1, 2, 3, 4, 5};
-        for (int i = 0; i < expectedValues.length; i++) {
-            int selected = input.askInt("Enter menu:");
-            assertThat(selected).isEqualTo(expectedValues[i]);
-        }
+        int firstSelected = input.askInt("Enter menu:");
+        assertThat(firstSelected).isEqualTo(1);
+        int secondSelected = input.askInt("Enter menu:");
+        assertThat(secondSelected).isEqualTo(2);
+        int thirdSelected = input.askInt("Enter menu:");
+        assertThat(thirdSelected).isEqualTo(3);
+        int fourthSelected = input.askInt("Enter menu:");
+        assertThat(fourthSelected).isEqualTo(4);
+        int firfthSelected = input.askInt("Enter menu:");
+        assertThat(firfthSelected).isEqualTo(5);
     }
 
     @Test
