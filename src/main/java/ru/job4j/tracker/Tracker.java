@@ -7,7 +7,7 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
-    private int indexOf(int id) {
+    int indexOf(int id) {
         int result = -1;
         for (int index = 0; index < size; index++) {
             if (items[index].getId() == id) {
