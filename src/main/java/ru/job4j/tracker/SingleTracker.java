@@ -21,10 +21,6 @@ public class SingleTracker {
         return tracker.add(item);
     }
 
-    private int indexOf(int id) {
-        return tracker.indexOf(id);
-    }
-
     public Item findById(int id) {
         return tracker.findById(id);
     }
